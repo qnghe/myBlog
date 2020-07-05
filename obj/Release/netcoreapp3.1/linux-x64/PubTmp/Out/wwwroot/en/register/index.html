@@ -1,0 +1,76 @@
+﻿<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Register</title>
+
+    <link rel="shortcut icon" href="../../blog.png" type="image/png">
+    <link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/options.css">
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <div class="logo-div">
+                <img src="../../blog.png" alt="Blog logo">
+            </div>
+            <div class="option-pre"><span>Error:&nbsp;</span><span id="error-tip"></span></div>
+            <div class="register-div">
+                <div id="register-loading"></div>
+                <div class="register-inner-div">
+                    <form>
+                        <div>
+                            <label class="option-label" for="register-username">Username</label>
+                        </div>
+                        <div class="info-div">
+                            <input class="option-input" id="register-username" type="text" autofocus required>
+                        </div>
+                        <div>
+                            <label class="option-label" for="register-email">Email Address</label>
+                        </div>
+                        <div class="info-div">
+                            <input class="option-input" id="register-email" type="text" required>
+                        </div>
+                        <div>
+                            <label class="option-label" for="register-password">Password</label>
+                        </div>
+                        <div class="info-div">
+                            <input class="option-input" id="register-password" type="password" required>
+                        </div>
+                        <div class="register-button-div">
+                            <button type="button" id="register-button">Register</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="options-div">
+                <div>
+                    <a href="../login/">Log in</a>
+                </div>
+                <div>
+                    <a href="../../en/">←Back to Blog</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--------------------------------------->
+    <!-- register loading -->
+    <div id="register-loading-div">
+        <div class="loading-circle-empty" id="register-loading-empty">
+            <div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <!-- register loading -->
+    <!--------------------------------------->
+
+    <script src="../../lib/jquery/dist/jquery.min.js"></script>
+    <script src="../../lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../../js/register.js"></script>
+</body>
+
+</html>

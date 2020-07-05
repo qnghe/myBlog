@@ -1,0 +1,832 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">-->
+    <title>Dashboard</title>
+
+    <link rel="shortcut icon" href="../../blog.png" type="image/png">
+    <link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/dashboard.css">
+
+    <script src="../../lib/font-awesome/js/all.min.js"></script>
+</head>
+
+<body>
+    <div>
+        <!--------------------------------------->
+        <!-- dashboard header -->
+        <div class="dashboard-header-div">
+            <div class="dashboard-header-option-div">
+                <div class="dashboard-header-option">
+                    <a class="dashboard-header-option-a" href="../dashboard/">dashboard</a>
+                </div>
+                <div class="dashboard-header-option">
+                    <a class="dashboard-header-option-a" href="/en/">visit site</a>
+                </div>
+            </div>
+            <div class="profile-div">
+                <span class="greeting">Nice to meet you,&nbsp;</span>
+                <div class="profile-name-div dropdown">
+                    <span id="profile-name" data-toggle="dropdown"></span>
+                    <div class="dropdown-menu" id="log-out-div">
+                        <div id="log-out">Log Out</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- dashboard header -->
+        <!--------------------------------------->
+        <!--------------------------------------->
+        <!-- dashboard left menu -->
+        <div class="dashboard-left-menu-div">
+            <ul class="dashboard-left-menu-ul">
+                <li class="dashboard-left-menu-li">
+                    <a class="dashboard-left-menu-a-origin dashboard-left-menu-a" href="#menu/" id="dashboard-left-menu-menu"
+                       content-id="dashboard-menu-content">
+                        <span>Menu</span>
+                        <div class="dashboard-menu-arrow"></div>
+                    </a>
+                </li>
+                <li class="dashboard-left-menu-li">
+                    <a class="dashboard-left-menu-a-origin dashboard-left-menu-a" href="#posts/" id="dashboard-left-menu-posts"
+                       content-id="dashboard-posts-content">
+                        <span>Posts</span>
+                        <div class="dashboard-menu-arrow"></div>
+                    </a>
+                </li>
+                <li class="dashboard-left-menu-li">
+                    <a class="dashboard-left-menu-a-origin dashboard-left-menu-a" href="#about/" id="dashboard-left-menu-about"
+                       content-id="dashboard-about-page-content">
+                        <span>About Page</span>
+                        <div class="dashboard-menu-arrow"></div>
+                    </a>
+                </li>
+                <li class="dashboard-left-menu-li">
+                    <a class="dashboard-left-menu-a-origin dashboard-left-menu-a" href="#users/" id="dashboard-left-menu-users"
+                       content-id="dashboard-users-content">
+                        <span>Users</span>
+                        <div class="dashboard-menu-arrow"></div>
+                    </a>
+                </li>
+                <li class="dashboard-left-menu-li">
+                    <a class="dashboard-left-menu-a-origin dashboard-left-menu-a" href="#profile/" id="dashboard-left-menu-profile"
+                       content-id="dashboard-profile-content">
+                        <span>Profile</span>
+                        <div class="dashboard-menu-arrow"></div>
+                    </a>
+                </li>
+                <li class="dashboard-left-menu-li">
+                    <a class="dashboard-left-menu-a-origin dashboard-left-menu-a" href="#settings/" id="dashboard-left-menu-settings" content-id="dashboard-settings-content">
+                        <span>Settings</span>
+                        <div class="dashboard-menu-arrow"></div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- dashboard left menu -->
+        <!--------------------------------------->
+        <!--------------------------------------->
+        <!-- dashboard main -->
+        <div class="dashboard-main">
+            <div class="dashboard-content" id="statis-content">
+                Welcome to my Blog.
+            </div>
+            <!--------------------------------------->
+            <!-- result tip -->
+            <div id="result-tip"></div>
+            <div id="demo-tip-div">
+                <div class="tip-item" id="demo-tip">
+                    <div class="tip-item-title">
+                        <div class="status success">Success</div>
+                        <div class="close">&times;</div>
+                    </div>
+                    <div class="tip-item-body toast-body">Updated Completely.</div>
+                </div>
+            </div>
+            <!-- result tip -->
+            <!--------------------------------------->
+            <!--------------------------------------->
+            <!-- Menu content -->
+            <div class="dashboard-content" id="dashboard-menu-content">
+                <div>
+                    <h1>Menu</h1>
+                </div>
+                <div class="container">
+                    <div class="menu-structure-div">
+                        <div>
+                            <p>Menu structure</p>
+                        </div>
+                        <div>
+                            <div class="loading-circle-fill" id="save-menu-loading">
+                                <div>
+                                    <div></div>
+                                </div>
+                            </div>
+                            <button id="save-menu-button" class="special-button" modified="false">Save Menu</button>
+                        </div>
+                    </div>
+                    <div id="menu-content-div">
+                        <div>
+                            <p class="menu-tip-p">
+                                Drag each item into the order you prefer. Click the arrow on the right of the
+                                item to
+                                reveal
+                                additional configuration options
+                            </p>
+                        </div>
+                        <div>
+                            <ul id="menu-main-ul"></ul>
+                            <div>
+                                <button id="menu-add-new-button" class="normal-button">Add New</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="menu-loading-div">
+                        <div class="loading-circle-fill" id="menu-loading">
+                            <div>
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <ul>
+                    <li class="menu-main-li" id="demo-menu-li">
+                        <div>
+                            <div class="item-summary-div">
+                                <div class="category-name-div">
+                                    <span class="category-name">Category1</span>
+                                </div>
+                                <div class="expand-button-div">
+                                    <button class="expand-button dropdown-toggle expand-button-close"></button>
+                                </div>
+                            </div>
+                            <div class="item-manage-div">
+                                <div>
+                                    <p class="category-name-tip">Category Name</p>
+                                </div>
+                                <div>
+                                    <input class="category-input" type="text">
+                                </div>
+                                <div class="category-action-div">
+                                    <span class="category-remove-action">Remove</span>
+                                    <span>&nbsp;|&nbsp;</span>
+                                    <span class="category-cancel-action">Cancel</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- Menu content -->
+            <!--------------------------------------->
+            <!--------------------------------------->
+            <!-- Posts content -->
+            <div class="dashboard-content" id="dashboard-posts-content">
+                <div class="dashboard-posts-content-header">
+                    <div class="posts-h1-div">
+                        <h1>Posts</h1>
+                        <div class="add-new-div">
+                            <a class="add-new-a" href="#choose-category/" id="add-new-post">Add New</a>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="search-div">
+                            <input class="normal-input" type="search" name="post-search-input" id="post-search-input">
+                            <button id="post-search-button" class="normal-button">Search Posts</button>
+                        </div>
+                        <div class="number-row">
+                            <a class="number-a" id="published-posts" href="#posts/">Published&nbsp;<span id="number-of-published-posts">(0)</span></a>
+                            <span>&nbsp;|&nbsp;</span>
+                            <a class="number-a" id="draft-posts" href="#draft-posts/">Draft&nbsp;<span id="number-of-draft-posts">(0)</span></a>
+                        </div>
+                        <div class="filter-row">
+                            <select class="select-element" name="bulk-delete-posts" id="bulk-delete-posts">
+                                <option value="henry">Bulk Actions</option>
+                                <option value="delete">Delete</option>
+                            </select>
+                            <button id="posts-apply-button" class="normal-button">Apply</button>
+                            <select class="select-element" name="all-dates" id="all-dates">
+                                <option class="default-option" value="henry">All Dates</option>
+                            </select>
+                            <select class="select-element" name="all-categories" id="all-categories">
+                                <option value="henry">All Categories</option>
+                            </select>
+                            <div id="category-string"></div>
+                            <button id="posts-filter-button" class="normal-button">Filter</button>
+                            <div class="filtered-number-div">
+                                <span id="posts-filtered-number"></span>
+                            </div>
+                        </div>
+                        <table class="title-table">
+                            <thead>
+                                <tr>
+                                    <th class="title-table-th checkbox-cell">
+                                        <div class="post-checkbox-div">
+                                            <input type="checkbox" name="posts-bulk-checkbox" id="posts-bulk-checkbox">
+                                        </div>
+                                    </th>
+                                    <th class="title-table-th title-cell">Title</th>
+                                    <th class="title-table-th author-cell">Author</th>
+                                    <th class="title-table-th categories-cell">Categories</th>
+                                    <th class="title-table-th date-cell">Date</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+                <div class="container">
+                    <div id="dashboard-posts-content-table-div">
+                        <table class="dashboard-posts-content-table">
+                            <tbody id="dashboard-posts-content-tbody"></tbody>
+                        </table>
+                    </div>
+                    <div class="post-loading-div">
+                        <div class="loading-circle-fill" id="post-loading">
+                            <div>
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <table id="demo-dashboard-posts-content-table">
+                    <tbody>
+                        <tr class="item-summary" id="demo-post">
+                            <td class="checkbox-cell">
+                                <div class="post-checkbox-div">
+                                    <input class="post-checkbox" type="checkbox">
+                                </div>
+                            </td>
+                            <td class="title-cell">
+                                <strong class="title-strong">
+                                    <a class="title-strong-a" href="#" target="_blank">Post Title</a>
+                                </strong>
+                                <div class="actions-div">
+                                    <a class="edit-a" href="#">Edit</a>
+                                    <span>&nbsp;|&nbsp;</span>
+                                    <span class="post-delete-span">Delete</span>
+                                </div>
+                            </td>
+                            <td class="author-cell">author</td>
+                            <td class="categories-cell">category</td>
+                            <td class="date-cell">
+                                <div>
+                                    <div>
+                                        <span>Publised:&nbsp;&nbsp;</span>
+                                        <abbr class="published-time" data-placement="top" title="Published time">published time</abbr>
+                                    </div>
+                                    <div>
+                                        <span>Modified:&nbsp;</span>
+                                        <abbr class="modified-time" data-placement="bottom" title="Modified time">modified time</abbr>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Posts content -->
+            <!--------------------------------------->
+            <!--------------------------------------->
+            <!-- Choose category -->
+            <div class="dashboard-content" id="dashboard-choose-category">
+                <div class="posts-h1-div">
+                    <h1>Choose Category</h1>
+                    <div class="add-new-div">
+                        <a class="add-new-a" href="#menu/" id="add-new-category">Add New</a>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="dashboard-choose-category-outer-div">
+                        <div class="dashboard-choose-category-inner-div">
+                            <ul class="dashboard-choose-category-ul" id="category-list"></ul>
+                        </div>
+                    </div>
+                    <ul id="demo-category-list-ul">
+                        <li class="dashboard-choose-category-li" id="demo-category-list-li">
+                            <a class="dashboard-choose-category-item" href="#">Demo Category</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Choose category -->
+            <!--------------------------------------->
+            <!--------------------------------------->
+            <!-- Edit page content -->
+            <div class="dashboard-content" id="dashboard-edit-page-content">
+                <div>
+                    <h1 id="post-operation">Edit Post</h1>
+                </div>
+                <div class="container">
+                    <div class="dashboard-edit-page-header-div">
+                        <div class="post-operations">
+                            <button class="special-button" id="post-save-draft-button">Save Draft</button>
+                            <button class="normal-button m-2" id="post-preview-button">Preview</button>
+                            <button class="special-button" id="post-publish-button">Publish</button>
+                        </div>
+                        <div id="edit-loading-block"></div>
+                        <!--------------------------------------->
+                        <!-- post title -->
+                        <div id="dashboard-edit-post-header-div">
+                            <div class="dashboard-edit-post-header-outer-div">
+                                <div class="dashboard-edit-post-header-inner-div">
+                                    <div class="dashboard-edit-post-title-div post-content-main-div post-item-hover">
+                                        <h1 class="post-title post-item-focus" id="post-edit-title" contenteditable="true" modified="false"></h1>
+                                        <span class="post-item-tip">Title</span>
+                                    </div>
+                                    <div class="post-content-actions-div" data-role="editor-toolbar"
+                                         data-target="#post-editor">
+                                        <div class="heading-size">
+                                            <a class="post-content-action" data-edit="fontsize 3" data-placement="top"
+                                               title="Fontszie 3">
+                                                <strong>
+                                                    S<sub>3</sub>
+                                                </strong>
+                                            </a>
+                                            <a class="post-content-action mx-1" data-edit="fontsize 5"
+                                               data-placement="top" title="Fontszie 5">
+                                                <strong>
+                                                    S<sub>5</sub>
+                                                </strong>
+                                            </a>
+                                            <a class="post-content-action" data-edit="fontsize 6" data-placement="top"
+                                               title="Fontszie 6">
+                                                <strong>
+                                                    S<sub>6</sub>
+                                                </strong>
+                                            </a>
+                                        </div>
+                                        <div class="text-align">
+                                            <a class="post-content-action" data-edit="justifyleft" data-placement="top"
+                                               title="Align text left">
+                                                <span>
+                                                    <i class="fas fa-align-left"></i>
+                                                </span>
+                                            </a>
+                                            <a class="post-content-action mx-1" data-edit="justifycenter"
+                                               data-placement="top" title="Align text center">
+                                                <span>
+                                                    <i class="fas fa-align-center"></i>
+                                                </span>
+                                            </a>
+                                            <a class="post-content-action" data-edit="justifyright" data-placement="top"
+                                               title="Align text right">
+                                                <span>
+                                                    <i class="fas fa-align-right"></i>
+                                                </span>
+                                            </a>
+                                        </div>
+                                        <div class="font-appearence">
+                                            <a class="post-content-action" data-edit="bold" data-placement="top"
+                                               title="Bold">
+                                                <span class="font-actions-icon-span">
+                                                    <i class="fas fa-bold"></i>
+                                                </span>
+                                            </a>
+                                            <a class="post-content-action" data-edit="italic" data-placement="top"
+                                               title="Italic">
+                                                <span class="font-actions-icon-span">
+                                                    <i class="fas fa-italic"></i>
+                                                </span>
+                                            </a>
+                                            <a class="post-content-action mx-1" data-edit="strikethrough"
+                                               data-placement="top" title="Strikethrough">
+                                                <span>
+                                                    <i class="fas fa-strikethrough"></i>
+                                                </span>
+                                            </a>
+                                            <a class="post-content-action" data-edit="underline" data-placement="top"
+                                               title="Underline">
+                                                <span>
+                                                    <i class="fas fa-underline"></i>
+                                                </span>
+                                            </a>
+                                        </div>
+                                        <div class="list-style">
+                                            <a class="post-content-action" data-edit="insertunorderedlist"
+                                               data-placement="top" title="Convert to unordered list">
+                                                <span>
+                                                    <i class="fas fa-list-ul"></i>
+                                                </span>
+                                            </a>
+                                            <a class="post-content-action mx-1" data-edit="insertorderedlist"
+                                               data-placement="top" title="Convert to ordered list">
+                                                <span>
+                                                    <i class="fas fa-list-ol"></i>
+                                                </span>
+                                            </a>
+                                            <a class="post-content-action" data-edit="outdent" data-placement="top"
+                                               title="Outdent list item">
+                                                <span>
+                                                    <i class="fas fa-outdent"></i>
+                                                </span>
+                                            </a>
+                                            <a class="post-content-action" data-edit="indent" data-placement="top"
+                                               title="Indent list item">
+                                                <span>
+                                                    <i class="fas fa-indent"></i>
+                                                </span>
+                                            </a>
+                                        </div>
+                                        <div class="separatore-action">
+                                            <a class="post-content-action" data-edit="inserthorizontalrule"
+                                               id="add-separator-line" data-placement="top" title="Separator line">
+                                                <span>
+                                                    <i class="fas fa-minus"></i>
+                                                </span>
+                                            </a>
+                                        </div>
+                                        <div class="link-binding">
+                                            <a class="post-content-action mr-1" data-toggle="dropdown"
+                                               data-placement="top" title="Link">
+                                                <span>
+                                                    <i class="fas fa-link"></i>
+                                                </span>
+                                            </a>
+                                            <div class="dropdown-menu">
+                                                <input class="normal-input" type="text" data-edit="createLink">
+                                                <button class="normal-button">Add</button>
+                                            </div>
+                                            <a class="post-content-action" data-edit="unlink" data-placement="top"
+                                               title="Unlink">
+                                                <span>
+                                                    <i class="fas fa-unlink"></i>
+                                                </span>
+                                            </a>
+                                        </div>
+                                        <div class="clean-content-div">
+                                            <a class="post-content-action" id="clean-up-content" data-placement="top"
+                                               title="Clean up content">
+                                                <span>
+                                                    <i class="fas fa-eraser"></i>
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- post title -->
+                        <!--------------------------------------->
+                    </div>
+                    <div id="dashboard-edit-page-outer-div">
+                        <div class="dashboard-edit-page-inner-div" id="post-0">
+                            <!--------------------------------------->
+                            <!-- post content -->
+                            <div class="dashboard-edit-post-content-div">
+                                <div class="post-content-main-div post-item-hover">
+                                    <div class="post-content-target-div post-item-focus" id="post-editor"></div>
+                                    <span class="post-item-tip">Content</span>
+                                </div>
+                            </div>
+                            <!-- post content -->
+                            <!--------------------------------------->
+                        </div>
+                    </div>
+                    <!--------------------------------------->
+                    <!-- edit loading -->
+                    <div class="edit-loading-div">
+                        <div class="loading-circle-fill" id="edit-loading">
+                            <div>
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- edit loading -->
+                    <!--------------------------------------->
+                </div>
+            </div>
+            <!-- Edit page content -->
+            <!--------------------------------------->
+            <!--------------------------------------->
+            <!-- Users content -->
+            <div class="dashboard-content" id="dashboard-users-content">
+                <div class="dashboard-users-content-header">
+                    <div>
+                        <h1>Users</h1>
+                    </div>
+                    <div class="container">
+                        <div class="search-div">
+                            <input class="normal-input" type="search" name="user-search-input" id="user-search-input">
+                            <button id="user-search-button" class="normal-button">Search Users</button>
+                        </div>
+                        <div class="number-row">
+                            <a class="number-a" id="all-users" href="#users/">All&nbsp;<span id="number-of-all-users">(0)</span></a>
+                            <span>&nbsp;|&nbsp;</span>
+                            <a class="number-a" id="administrator" href="#users/">
+                                Administrator&nbsp;<span id="number-of-administrator-users">(0)</span>
+                            </a>
+                            <span>&nbsp;|&nbsp;</span>
+                            <a class="number-a" id="manager" href="#users/">Manager&nbsp;<span id="number-of-manager-users">(0)</span></a>
+                            <span>&nbsp;|&nbsp;</span>
+                            <a class="number-a" id="subscriber" href="#users/">Subscriber&nbsp;<span id="number-of-subscriber-users">(0)</span></a>
+                        </div>
+                        <div class="filter-row">
+                            <select class="select-element" name="bulk-delete-users" id="bulk-delete-users">
+                                <option value="Henry">Bulk Actions</option>
+                                <option value="delete">Delete</option>
+                            </select>
+                            <button id="users-apply-button" class="normal-button apply-button">Apply</button>
+                            <select class="select-element" name="all-roles" id="all-roles">
+                                <option value="Henry">Change role to...</option>
+                                <option value="Administrator">Administrator</option>
+                                <option value="Manager">Manager</option>
+                                <option value="Subscriber">Subscriber</option>
+                            </select>
+                            <button id="change-role-button" class="normal-button">Change</button>
+                        </div>
+                        <table class="title-table">
+                            <thead>
+                                <tr>
+                                    <th class="title-table-th checkbox-cell">
+                                        <div class="user-checkbox-div">
+                                            <input type="checkbox" name="users-bulk-checkbox" id="users-bulk-checkbox">
+                                        </div>
+                                    </th>
+                                    <th class="title-table-th username-cell">Username</th>
+                                    <th class="title-table-th email-cell">Email</th>
+                                    <th class="title-table-th userrole-cell">Role</th>
+                                    <th class="title-table-th postnumber-cell">Posts</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+                <div class="container">
+                    <div id="dashboard-users-content-table-div">
+                        <table class="dashboard-users-content-table">
+                            <tbody id="dashboard-users-content--tbody"></tbody>
+                        </table>
+                    </div>
+                    <div class="user-loading-div">
+                        <div class="loading-circle-fill" id="user-loading">
+                            <div>
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <table id="demo-user-table">
+                        <tbody>
+                            <tr class="item-summary" id="demo-user-tr">
+                                <td class="checkbox-cell">
+                                    <div class="user-checkbox-div">
+                                        <input class="user-checkbox" type="checkbox">
+                                    </div>
+                                </td>
+                                <td class="username-cell">
+                                    <strong class="username-strong">
+                                        <span class="username-strong-span">admin</span>
+                                    </strong>
+                                    <div class="actions-div">
+                                        <a class="edit-a" href="#profile/">Edit</a>
+                                        <span>&nbsp;|&nbsp;</span>
+                                        <span class="user-delete-span">Delete</span>
+                                    </div>
+                                </td>
+                                <td class="email-cell">
+                                    <a class="email-address" href="mailto:info@shallwe.ml">info@shallwe.ml</a>
+                                </td>
+                                <td class="userrole-cell">Administrator</td>
+                                <td class="postnumber-cell">9</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Users content -->
+            <!--------------------------------------->
+            <!--------------------------------------->
+            <!-- Profile content -->
+            <div class="dashboard-content" id="dashboard-profile-content">
+                <div>
+                    <h1>Profile</h1>
+                </div>
+                <div class="container">
+                    <table class="profile-table">
+                        <tbody class="profile-tbody">
+                            <tr class="profile-tr">
+                                <th class="profile-label-th">
+                                    <div class="profile-label-div">
+                                        <label for="user-login">Username</label>
+                                    </div>
+                                </th>
+                                <td>
+                                    <input class="profile-input" id="user-login" type="text" disabled>
+                                </td>
+                            </tr>
+                            <tr class="profile-tr">
+                                <th class="profile-label-th">
+                                    <div class="profile-label-div">
+                                        <label for="user-email">Email</label>
+                                    </div>
+                                </th>
+                                <td>
+                                    <input class="profile-input" id="user-email" type="email" disabled>
+                                </td>
+                            </tr>
+                            <tr class="profile-tr">
+                                <th class="profile-label-th">
+                                    <div class="profile-label-div">
+                                        <label for="user-role">User Role</label>
+                                    </div>
+                                </th>
+                                <td>
+                                    <input class="profile-input" id="user-role" type="text" disabled>
+                                </td>
+                            </tr>
+                            <tr class="profile-tr">
+                                <th class="profile-label-th">
+                                    <div class="profile-label-div">
+                                        <label for="post-count">Post Count</label>
+                                    </div>
+                                </th>
+                                <td>
+                                    <input class="profile-input" id="post-count" type="text" disabled>
+                                </td>
+                            </tr>
+                            <tr class="profile-tr">
+                                <th class="profile-label-th">
+                                    <div class="profile-label-div">
+                                        <label for="current-password">Current Password</label>
+                                    </div>
+                                </th>
+                                <td>
+                                    <input class="profile-input" id="current-password" type="password">
+                                </td>
+                            </tr>
+                            <tr class="profile-tr">
+                                <th class="profile-label-th">
+                                    <div class="profile-label-div">
+                                        <label for="new-password">New Password</label>
+                                    </div>
+                                </th>
+                                <td>
+                                    <input class="profile-input" id="new-password" type="password">
+                                </td>
+                            </tr>
+                            <tr class="profile-tr">
+                                <th class="profile-label-th">
+                                    <div class="profile-label-div">
+                                        <label for="confirm-password">Confirm New Password</label>
+                                    </div>
+                                </th>
+                                <td>
+                                    <input class="profile-input" id="confirm-password" type="password">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="update-profile-div">
+                        <button class="special-button" id="change-password">Change Password</button>
+                        <div class="loading-circle-fill" id="change-password-loading">
+                            <div>
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Profile content -->
+            <!--------------------------------------->
+            <!--------------------------------------->
+            <!-- Settings content -->
+            <div class="dashboard-content" id="dashboard-settings-content">
+                <div>
+                    <h1>Settings</h1>
+                </div>
+                <div class="container">
+                    <table class="settings-table">
+                        <tbody class="settings-tbody">
+                            <tr class="settings-tr">
+                                <th class="settings-label-th">
+                                    <div class="settings-label-div">
+                                        <label for="site-title">Site Title</label>
+                                    </div>
+                                </th>
+                                <td>
+                                    <input class="settings-input" id="site-title" type="text">
+                                </td>
+                            </tr>
+                            <tr class="settings-tr">
+                                <th class="settings-label-th">
+                                    <div class="settings-label-div">
+                                        <label for="tagline">Tagline</label>
+                                    </div>
+                                </th>
+                                <td>
+                                    <input class="settings-input" id="tagline" type="text">
+                                </td>
+                            </tr>
+                            <tr class="settings-tr">
+                                <th class="settings-label-th">
+                                    <div class="settings-label-div">
+                                        <label for="site-footer">Site Footer</label>
+                                    </div>
+                                </th>
+                                <td>
+                                    <input class="settings-input" id="site-footer" type="text">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <hr />
+                    <table class="settings-table">
+                        <tbody class="settings-tbody">
+                            <tr class="settings-tr">
+                                <th class="settings-label-th">
+                                    <div class="settings-label-div">
+                                        <label for="smtp-host">SMTP Host</label>
+                                    </div>
+                                </th>
+                                <td>
+                                    <input class="settings-input" id="smtp-host" type="text">
+                                </td>
+                            </tr>
+                            <tr class="settings-tr">
+                                <th class="settings-label-th">
+                                    <div class="settings-label-div">
+                                        <label for="smtp-port">SMTP Port</label>
+                                    </div>
+                                </th>
+                                <td>
+                                    <input class="settings-input" id="smtp-port" type="text">
+                                </td>
+                            </tr>
+                            <tr class="settings-tr">
+                                <th class="settings-label-th">
+                                    <div class="settings-label-div">
+                                        <label for="smtp-encryption">SMTP Encryption</label>
+                                    </div>
+                                </th>
+                                <td>
+                                    <input class="settings-input" id="smtp-encryption" type="text">
+                                </td>
+                            </tr>
+                            <tr class="settings-tr">
+                                <th class="settings-label-th">
+                                    <div class="settings-label-div">
+                                        <label for="smtp-username">SMTP Username</label>
+                                    </div>
+                                </th>
+                                <td>
+                                    <input class="settings-input" id="smtp-username" type="text">
+                                </td>
+                            </tr>
+                            <tr class="settings-tr">
+                                <th class="settings-label-th">
+                                    <div class="settings-label-div">
+                                        <label for="smtp-password">SMTP Password</label>
+                                    </div>
+                                </th>
+                                <td>
+                                    <input class="settings-input" id="smtp-password" type="password">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="save-settings-div">
+                        <button class="special-button" id="save-settings" modified="false">Save Changes</button>
+                        <div class="loading-circle-fill" id="save-settings-loading">
+                            <div>
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Settings content -->
+            <!--------------------------------------->
+            <!--------------------------------------->
+            <!-- back to top -->
+            <div id="back-to-top">∧</div>
+            <!-- back to top -->
+            <!--------------------------------------->
+        </div>
+        <!-- dashboard main -->
+        <!--------------------------------------->
+        <!--------------------------------------->
+        <!-- dashboard loading -->
+        <div id="dashboard-loading-div">
+            <div class="loading-circle-empty" id="dashboard-loading">
+                <div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+        <!-- dashboard loading -->
+        <!--------------------------------------->
+    </div>
+    <script src="../../lib/jquery/dist/jquery.min.js"></script>
+    <script src="../../lib/popperjs/popper.min.js"></script>
+    <script src="../../lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../../lib/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
+    <script src="../../lib/jquery.hotkeys/jquery.hotkeys.js"></script>
+    <script src="../../lib/jquery-scrollTo/jquery.scrollTo.min.js"></script>
+    <script src="../../lib/sortablejs/Sortable.min.js"></script>
+    <script src="../../lib/js-base64/base64.js"></script>
+    <script src="../../lib/jwt-decode/jwt-decode.min.js"></script>
+    <script src="../../js/dashboard.js"></script>
+</body>
+
+</html>

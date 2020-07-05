@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Contact</title>
+
+    <link rel="shortcut icon" href="../../blog.png" type="image/png">
+    <link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/contact.css" />
+</head>
+<body>
+    <div class="container">
+        <h2 id="info">Send email to me via the below form.</h2>
+        <div>
+            <div class="contact-h3-div">
+                <h3>Your Email Address</h3>
+            </div>
+            <div class="contact-h1-div">
+                <h5 class="item-hover" id="recipient" contenteditable="true"></h5>
+            </div>
+        </div>
+        <div>
+            <div class="contact-h3-div">
+                <h3>Subject</h3>
+            </div>
+            <div class="contact-h1-div">
+                <h2 class="item-hover" id="subject" contenteditable="true"></h2>
+            </div>
+        </div>
+        <div>
+            <div class="contact-h3-div">
+                <h3>Content</h3>
+            </div>
+            <div class="contact-contet-div">
+                <div class="item-hover" id="content" contenteditable="true"></div>
+            </div>
+            <div class="d-flex justify-content-center">
+                <div id="contact-loading"></div>
+            </div>
+        </div>
+        <div class="contact-h3-div">
+            <div id="send-email-div">
+                <div id="contact-tip"></div>
+                <button id="send-email">Send</button>
+            </div>
+        </div>
+        <div id="back-to-blog">
+            <a href="../../en/">←Back to Blog</a>
+        </div>
+    </div>
+    <!--------------------------------------->
+    <!-- contact loading -->
+    <div id="contact-loading-div">
+        <div class="loading-circle-empty" id="contact-loading">
+            <div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <!-- contact loading -->
+    <!--------------------------------------->
+
+    <script src="../../lib/jquery/dist/jquery.min.js"></script>
+    <script src="../../lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../../js/contact.js"></script>
+</body>
+</html>

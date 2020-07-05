@@ -1,0 +1,107 @@
+﻿html,
+body {
+    background-color: #fcfcfc;
+}
+
+.about-heading {
+    margin: 3rem 0;
+}
+
+#about-title {
+    font-size: 3rem;
+    text-align: center;
+}
+
+#about-content {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+#back-to-blog {
+    margin-bottom: 5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+    #back-to-blog > a {
+        text-decoration: none;
+        color: #555d66;
+    }
+        #back-to-blog > a:hover {
+            color: #00a0d2;
+        }
+/* --------------------------------------------------------- */
+/* loading */
+.loading-circle-empty {
+    width: 6rem;
+    height: 6rem;
+    border: .25rem solid transparent;
+    border-left-color: #f03f24;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: spinner-border 2s linear infinite;
+}
+
+    .loading-circle-empty > div {
+        width: 95%;
+        height: 95%;
+        border: .25rem solid transparent;
+        border-left-color: #f03f24;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: spinner-border 2.2s linear infinite;
+    }
+
+        .loading-circle-empty > div > div {
+            width: 95%;
+            height: 95%;
+            border: .25rem solid transparent;
+            border-left-color: #f03f24;
+            border-radius: 50%;
+            animation: spinner-border 2.2s linear infinite;
+        }
+
+#about-loading-div {
+    width: 100vw;
+    height: 100vh;
+    background-color: #fcfcfc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+}
+/* loading */
+/* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
+/* back to top appearence */
+#back-to-top {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    background-color: #e5e5e5;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 0 1rem #00000026;
+    border-radius: 3px;
+    color: #333;
+    display: none;
+    position: fixed;
+    right: 0;
+    bottom: 1rem;
+    z-index: 8;
+}
+
+    #back-to-top:hover {
+        box-shadow: 0 0 .5rem #00000026;
+    }
+/* back to top appearence */
+/* --------------------------------------------------------- */

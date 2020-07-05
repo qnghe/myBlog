@@ -1,0 +1,78 @@
+﻿<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Login</title>
+
+    <link rel="shortcut icon" href="../../blog.png" type="image/png">
+    <link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/options.css">
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <div class="logo-div">
+                <img src="../../blog.png" alt="Blog logo">
+            </div>
+            <div class="option-pre"><span>Error:&nbsp;</span><span id="error-tip"></span><a href="../forgot/" target="_self" id="forget-navigation">&nbsp;Lost your password?</a></div>
+            <div class="login-div">
+                <div id="login-loading"></div>
+                <div class="login-inner-div">
+                    <form>
+                        <div>
+                            <label class="option-label" for="login-username">Uername</label>
+                        </div>
+                        <div class="info-div">
+                            <input class="option-input" id="login-username" type="text" autofocus required>
+                        </div>
+                        <div>
+                            <label class="option-label" for="login-password">Password</label>
+                        </div>
+                        <div class="info-div">
+                            <input class="option-input" id="login-password" type="password" required>
+                        </div>
+                        <label id="remember-me-label" for="remember-me">
+                            <input id="remember-me" type="checkbox" />
+                            Remember Me
+                        </label>
+                        <div class="login-button-div">
+                            <button type="button" id="login-button">Log In</button>
+                        </div>
+                    </form>
+                    <div class="register-link-div">
+                        <a href="../register/">Register an account</a>
+                    </div>
+                </div>
+            </div>
+            <div class="options-div">
+                <div>
+                    <a href="../forgot/">Lost your password?</a>
+                </div>
+                <div>
+                    <a href="../../en/">←Back to Blog</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--------------------------------------->
+    <!-- login loading -->
+    <div id="login-loading-div">
+        <div class="loading-circle-empty" id="login-loading-empty">
+            <div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <!-- login loading -->
+    <!--------------------------------------->
+
+    <script src="../../lib/jquery/dist/jquery.min.js"></script>
+    <script src="../../lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../../lib/js-base64/base64.js"></script>
+    <script src="../../js/login.js"></script>
+</body>
+
+</html>

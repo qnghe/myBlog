@@ -1,0 +1,56 @@
+﻿<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Forgot</title>
+
+    <link rel="shortcut icon" href="../../blog.png" type="image/png">
+    <link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/options.css">
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <div class="logo-div">
+                <img src="../../blog.png" alt="Blog logo">
+            </div>
+            <div class="tip-div" id="forgot-tip">
+                <span id="status"></span>
+                <span id="message">You will receive a new password via email.</span>
+            </div>
+            <div class="retrieve-div">
+                <div id="retrieve-loading"></div>
+                <div class="retrieve-inner-div">
+                    <form>
+                        <div>
+                            <label class="option-label" for="forgot-username">Username</label>
+                        </div>
+                        <div class="info-div">
+                            <input class="option-input" id="forgot-username" type="text" autofocus>
+                        </div>
+                        <div class="retrieve-button-div">
+                            <button id="get-new-password">Get New Password</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="options-div">
+                <div>
+                    <a href="../login/">Log in</a>
+                </div>
+                <div>
+                    <a href="../../en/">←Back to Blog</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../lib/jquery/dist/jquery.min.js"></script>
+    <script src="../../lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../../js/forgot.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+﻿<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Home</title>
+
+    <link rel="shortcut icon" href="../blog.png" type="image/png">
+    <link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/site.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="title-tagline">
+            <h1 class="site-title"><a id="site-title-a" href="/en/">Blog</a></h1>
+            <p id="site-tagline">Note and share your technical experience</p>
+        </div>
+    </header>
+    <div class="nav-bar shadow">
+        <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-div">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu-div">
+                <div class="container">
+                    <div class="menu-inner-div">
+                        <ul class="navbar-nav" id="menu-ul">
+                        </ul>
+                        <ul id="demo-menu-li">
+                            <li class="menu-li">
+                                <a href="#" class="menu-a"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <main class="container">
+        <div class="main-container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div id="post-item-main"></div>
+                    <div id="post-loading-div">
+                        <div class="loading-circle-empty" id="post-loading">
+                            <div>
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="demo-article">
+                        <article class="post-article">
+                            <h2 class="post-article-h2">
+                                <a href="#" class="post-article-h2-a"></a>
+                            </h2>
+                            <i><a href="" class="post-article-category-a"></a></i>
+                            <p class="post-first-line"></p>
+                            <i class="author-info">By&nbsp;<span class="author-name"></span>&nbsp;&nbsp;<span class="post-display-readable-date"></span></i>
+                            <div class="read-more-div">
+                                <a href="" class="read-more-div-a">Read More</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div id="demo-post">
+                        <div class="published-post-content-main">
+                            <h1 class="published-post-title">Nice to meet you</h1>
+                            <div class="published-post-info">
+                                <i class="author-info"><span class="post-modified-time">May 27, 2020</span>&nbsp;&nbsp;&nbsp;By&nbsp;</i>
+                                <span class="author-name">henry</span>
+                            </div>
+                            <div class="published-post-content"></div>
+                            <div class="published-post-category-div">
+                                <i class="author-info">Category&nbsp;&nbsp;<a class="published-post-category">CATEGORY</a></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="page-navigation"></div>
+                </div>
+                <div class="col-md-3">
+                    <aside id="site-operations">
+                        <div class="search-widget">
+                            <div class="search-div">
+                                <input type="search" name="search-input" id="search-input" autocomplete="on">
+                                <button type="button" id="search-button">Search</button>
+                            </div>
+                        </div>
+                        <div class="recent-posts-widget">
+                            <div>
+                                <h3>Recent posts</h3>
+                            </div>
+                            <ul id="recent-posts-ul"></ul>
+                            <ul id="demo-recent-posts-ul">
+                                <li class="recent-posts-li">
+                                    <a class="recent-posts-a" href="#">Nice to meet you</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="options-widget">
+                            <div>
+                                <h3>options</h3>
+                            </div>
+                            <ul class="options-ul">
+                                <li class="options-li">
+                                    <a href="login/" id="log-in">Log in</a>
+                                </li>
+                                <li class="options-li">
+                                    <a href="about/">About</a>
+                                </li>
+                                <li class="options-li">
+                                    <a href="contact/">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!--------------------------------------->
+    <!-- main loading -->
+    <div id="main-loading-div">
+        <div class="loading-circle-empty" id="main-loading">
+            <div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <!-- main loading -->
+    <!--------------------------------------->
+    <!--------------------------------------->
+    <!-- back to top -->
+    <div id="back-to-top" title="Back to top">∧</div>
+    <!-- back to top -->
+    <!--------------------------------------->
+    <footer>
+        <div class="container">
+            <p>Copyright ©<span id="copyright"></span>&nbsp;<a href="/en/" id="blog-title">Blog</a>&nbsp;|&nbsp;<span id="footer-text"></span></p>
+        </div>
+    </footer>
+
+    <script src="../lib/jquery/dist/jquery.min.js"></script>
+    <script src="../lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../lib/js-base64/base64.js"></script>
+    <script src="../lib/paginationjs/pagination.min.js"></script>
+    <script src="../lib/jquery-scrollTo/jquery.scrollTo.min.js"></script>
+    <script src="../lib/jwt-decode/jwt-decode.min.js"></script>
+    <script src="../js/site.js"></script>
+</body>
+
+</html>
